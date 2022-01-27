@@ -9,6 +9,12 @@ import { MenuTiendaComponent } from './modulo_tienda/components/shared/menu-tien
 import { DashboardTiendaComponent } from './modulo_tienda/components/dashboard-tienda/dashboard-tienda.component';
 import { DashboardUsuarioComponent } from './modulo_usuario/components/dashboard-usuario/dashboard-usuario.component';
 import { MenuUsuarioComponent } from './modulo_usuario/components/shared/menu-usuario/menu-usuario.component';
+import { MenuHeaderComponent } from './modulo_admin/components/shared/menu-header/menu-header.component';
+import { GeneralAdminComponent } from './modulo_admin/general-admin/general-admin.component';
+import { GeneralTiendaComponent } from './modulo_tienda/general-tienda/general-tienda.component';
+import { GeneralUsuarioComponent } from './modulo_usuario/general-usuario/general-usuario.component';
+import { MenuHeaderTiendaComponent } from './modulo_tienda/components/shared/menu-header-tienda/menu-header-tienda.component';
+import { MenuHeaderUsuarioComponent } from './modulo_usuario/components/shared/menu-header-usuario/menu-header-usuario.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +24,13 @@ import { MenuUsuarioComponent } from './modulo_usuario/components/shared/menu-us
     MenuTiendaComponent,
     DashboardTiendaComponent,
     DashboardUsuarioComponent,
-    MenuUsuarioComponent
+    MenuUsuarioComponent,
+    MenuHeaderComponent,
+    GeneralAdminComponent,
+    GeneralTiendaComponent,
+    GeneralUsuarioComponent,
+    MenuHeaderTiendaComponent,
+    MenuHeaderUsuarioComponent
   ],
   imports: [
     BrowserModule,

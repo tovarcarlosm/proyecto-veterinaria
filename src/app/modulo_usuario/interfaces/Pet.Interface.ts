@@ -1,4 +1,4 @@
-import { UserInterface } from "../../general/User.Interface";
+import { UserInterface } from "../../interfaces_general/User.Interface";
 
 export interface PetInterface {
   _id: string;
