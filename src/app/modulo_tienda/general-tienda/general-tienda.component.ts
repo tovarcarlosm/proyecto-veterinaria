@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-interfaces_general-tienda',
+  selector: 'app-interfaces-tienda',
   templateUrl: './general-tienda.component.html',
   styleUrls: ['./general-tienda.component.css']
 })

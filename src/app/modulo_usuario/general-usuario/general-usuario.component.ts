@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-interfaces_general-usuario',
+  selector: 'app-interfaces-usuario',
   templateUrl: './general-usuario.component.html',
   styleUrls: ['./general-usuario.component.css']
 })
