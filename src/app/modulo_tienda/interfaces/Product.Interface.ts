@@ -7,4 +7,6 @@ export interface ProductInterface {
   salePrice: string;
   quantity: number;
   stock: number;
+  dateCreate: Date;
+  dateUpdate: Date;
 }
