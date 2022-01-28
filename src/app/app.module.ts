@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
+import {FormsModule} from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http";
+
+/** COMPONENTS **/
 import { AppComponent } from './app.component';
 import { DashboardAdminComponent } from './modulo_admin/components/dashboard-admin/dashboard-admin.component';
 import { MenuAdminComponent } from './modulo_admin/components/shared/menu-admin/menu-admin.component';
@@ -15,6 +18,8 @@ import { GeneralTiendaComponent } from './modulo_tienda/general-tienda/general-t
 import { GeneralUsuarioComponent } from './modulo_usuario/general-usuario/general-usuario.component';
 import { MenuHeaderTiendaComponent } from './modulo_tienda/components/shared/menu-header-tienda/menu-header-tienda.component';
 import { MenuHeaderUsuarioComponent } from './modulo_usuario/components/shared/menu-header-usuario/menu-header-usuario.component';
+import { UsuarioComponent } from './modulo_admin/components/usuario/usuario.component';
+import { UsuariosComponent } from './modulo_admin/components/usuarios/usuarios.component';
 
 @NgModule({
   declarations: [
@@ -30,11 +35,15 @@ import { MenuHeaderUsuarioComponent } from './modulo_usuario/components/shared/m
     GeneralTiendaComponent,
     GeneralUsuarioComponent,
     MenuHeaderTiendaComponent,
-    MenuHeaderUsuarioComponent
+    MenuHeaderUsuarioComponent,
+    UsuarioComponent,
+    UsuariosComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
