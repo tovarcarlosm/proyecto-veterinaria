@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { UserModel } from "../models/User.Model";
-import { map } from "rxjs";
+import { map, delay } from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -32,5 +32,40 @@ export class UsersService {
     delete userAux._id;
 
     return this._http.put(`${ this.url }/users/${ user._id }.json`, userAux);
+  }
+
+  listarUser(id: string | null){
+    return this._http.get(`${ this.url }/users/${ id }.json`);
+  }
+
+  eliminar(id: string | null){
+    return this._http.delete(`${ this.url }/users/${ id }.json`);
+  }
+
+  listar(){
+    return this._http.get(`${ this.url }/users.json`)
+      .pipe(
+        map( this._convertirAArreglo ),
+        delay(1000)
+      );
+  }
+
+  private _convertirAArreglo( userObj: object){
+    const users: UserModel[] = [];
+    console.log( userObj );
+
+    if(userObj === null) {
+      return [];
+    }
+
+    Object.keys( userObj ).forEach( key => {
+      // @ts-ignore
+      const user: UserModel = userObj[key];
+      user._id = key;
+
+      users.push( user );
+    } )
+
+    return users;
   }
 }
