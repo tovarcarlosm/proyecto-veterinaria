@@ -1,0 +1,33 @@
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-6">
+      <h4>Aquí va una imagen</h4>
+    </div>
+    <div class="col-6">
+      <h3 class="mt-5 mb-5">Iniciar Sesión</h3>
+      <form autocomplete="off" (ngSubmit)="iniciarSesion(formLogin)" #formLogin="ngForm">
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email"
+                 class="form-control"
+                 id="email"
+                 name="email"
+                 [(ngModel)]="user.email"
+                 placeholder="name@example.com">
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Contraseña</label>
+          <input type="password"
+                 class="form-control"
+                 id="password"
+                 name="password"
+                 [(ngModel)]="user.password"
+                 placeholder="Contraseña">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+      </form>
+    </div>
+  </div>
+</div>

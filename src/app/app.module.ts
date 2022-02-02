@@ -20,6 +20,8 @@ import { MenuHeaderTiendaComponent } from './modulo_tienda/components/shared/men
 import { MenuHeaderUsuarioComponent } from './modulo_usuario/components/shared/menu-header-usuario/menu-header-usuario.component';
 import { UsuarioComponent } from './modulo_admin/components/usuario/usuario.component';
 import { UsuariosComponent } from './modulo_admin/components/usuarios/usuarios.component';
+import { SignupComponent } from './general/signup/signup.component';
+import { LoginComponent } from './general/login/login.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,9 @@ import { UsuariosComponent } from './modulo_admin/components/usuarios/usuarios.c
     MenuHeaderTiendaComponent,
     MenuHeaderUsuarioComponent,
     UsuarioComponent,
-    UsuariosComponent
+    UsuariosComponent,
+    SignupComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

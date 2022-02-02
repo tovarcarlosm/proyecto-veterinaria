@@ -4,3 +4,4 @@ export interface RolInterface {
   description: string;
   permissions: string[];
 }
+
