@@ -51,11 +51,17 @@ export class AuthService {
 
   logout(){
     localStorage.removeItem('idToken');
+    localStorage.removeItem('expiresIn');
   }
 
   private saveToken(idToken: string){
     this.userToken = idToken;
     localStorage.setItem('idToken', idToken);
+
+    let hoy = new Date();
+    hoy.setSeconds(3600);
+
+    localStorage.setItem('expiresIn', hoy.getTime().toString());
   }
 
   getToken(){
@@ -70,6 +76,20 @@ export class AuthService {
   }
 
   isAuth(): boolean {
-    return this.userToken.length > 2;
+    if(this.userToken.length < 2) { return false; }
+
+    const expire = Number(localStorage.getItem('expiresIn'));
+    const expireAux = new Date();
+    console.log(expireAux);
+    expireAux.setTime(expire);
+    console.log(expireAux.setTime(expire));
+    if(expireAux > new Date()){
+      console.log("Puede ingresar porque tiene permiso");
+      return true;
+    } else {
+      console.log("NO puede ingresar porque la sesión ya caducó");
+
+      return false;
+    }
   }
 }

@@ -13,10 +13,16 @@ import {Router} from "@angular/router";
 export class LoginComponent implements OnInit {
 
   user: UserModel = new UserModel();
+  rememberMe = false;
 
   constructor( private _auth: AuthService, private _router: Router) { }
 
   ngOnInit(): void {
+    if(localStorage.getItem('email')){
+      // @ts-ignore
+      this.user.email = localStorage.getItem('email');
+      this.rememberMe = true;
+    }
   }
 
   iniciarSesion(formLogin: NgForm){
@@ -34,7 +40,11 @@ export class LoginComponent implements OnInit {
         console.log(resp);
         Swal.close();
 
-        this._router.navigateByUrl('/admin');
+        if(this.rememberMe){
+          localStorage.setItem('email', this.user.email);
+        }
+
+        this._router.navigateByUrl('/admin/dashboard');
 
       }, (err) => {
         Swal.fire({

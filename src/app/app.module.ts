@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
-import {FormsModule} from "@angular/forms";
-import {HttpClientModule} from "@angular/common/http";
+import { FormsModule } from "@angular/forms";
+import { HttpClientModule } from "@angular/common/http";
+import { NgChartsModule } from "ng2-charts";
 
 /** COMPONENTS **/
 import { AppComponent } from './app.component';
@@ -22,6 +23,9 @@ import { UsuarioComponent } from './modulo_admin/components/usuario/usuario.comp
 import { UsuariosComponent } from './modulo_admin/components/usuarios/usuarios.component';
 import { SignupComponent } from './general/signup/signup.component';
 import { LoginComponent } from './general/login/login.component';
+import { LineChartComponent } from './modulo_admin/components/stats/line-chart/line-chart.component';
+import { BarChartComponent } from './modulo_admin/components/stats/bar-chart/bar-chart.component';
+import { DoughnutChartComponent } from './modulo_admin/components/stats/doughnut-chart/doughnut-chart.component';
 
 @NgModule({
   declarations: [
@@ -41,13 +45,17 @@ import { LoginComponent } from './general/login/login.component';
     UsuarioComponent,
     UsuariosComponent,
     SignupComponent,
-    LoginComponent
+    LoginComponent,
+    LineChartComponent,
+    BarChartComponent,
+    DoughnutChartComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

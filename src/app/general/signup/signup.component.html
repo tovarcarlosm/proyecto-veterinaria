@@ -1,10 +1,12 @@
 
-<div class="container mt-5">
+<div class="container mt-5 animate__animated animate__fadeInLeft">
   <div class="row">
-    <div class="col-6">
-      <h4>Aquí va una imagen</h4>
+    <div class="col-6 img-login-signup">
+      <h4>
+        <img src="assets/img/veterinaria.jpg">
+      </h4>
     </div>
-    <div class="col-6">
+    <div class="col-6 form-login-signup">
       <h3 class="mt-5 mb-5">Registrar nuevo usuario</h3>
       <form autocomplete="off" (ngSubmit)="registrar(formSignup)" #formSignup="ngForm">
         <div class="mb-3">
@@ -36,6 +38,7 @@
         </div>
 
         <button type="submit" class="btn btn-primary">Registrar</button>
+        <a href="/login" class="m-lg-3">¿Ya tiene una cuenta?</a>
       </form>
     </div>
   </div>
